@@ -31,7 +31,9 @@
              @endif
          
          </td>
-         <td ><a href="" class="btn btn-danger glyphicon glyphicon-refresh"></a>  <a href="" class="btn btn-warning glyphicon glyphicon-trash"></a></td>
+         <td > <a href="" class="btn btn-danger glyphicon glyphicon-refresh"></a> 
+             <a href="{{route('admin.users.destroy',$user->id)}}" onclick="return confirm('Seguro desea eliminar')"class="btn btn-warning glyphicon glyphicon-trash"></a>
+         </td>
       </tr>
       
        @endforeach
