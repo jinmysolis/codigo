@@ -25,13 +25,13 @@
         
          <td >
              @if ($user->type == "admin")
-              <span class="label label-danger">{{$user->type}}</span>
+              <span class="label label-danger ">{{$user->type}}</span>
              @else
               <span class="label label-primary">{{$user->type}}</span>
              @endif
          
          </td>
-         <td ><a href="" class="btn btn-danger"></a>  <a href="" class="btn btn-warning"></a></td>
+         <td ><a href="" class="btn btn-danger glyphicon glyphicon-refresh"></a>  <a href="" class="btn btn-warning glyphicon glyphicon-trash"></a></td>
       </tr>
       
        @endforeach

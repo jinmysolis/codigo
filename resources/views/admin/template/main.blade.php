@@ -12,7 +12,7 @@
     <div class="row">
     
             <section>
-
+               @include('flash::message')
                 @yield('content')
 
             </section>
