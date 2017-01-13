@@ -3,6 +3,9 @@
 @section('title')  crear usuario  @endsection
 
 @section('content')
+
+ @include('admin.template.partials.errores')
+
 {!!Form::open(['route'=>'admin.users.store','method'=>'POST'])!!}
 
  @include('admin.template.partials.formulario')
