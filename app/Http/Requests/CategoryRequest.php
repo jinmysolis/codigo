@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class UserRequest extends Request {
+class CategoryRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,9 +22,7 @@ class UserRequest extends Request {
 	public function rules()
 	{
 		return [
-			'name'=> 'required|min:4|max:255',
-                        'email'=>'required|email|unique:users,email',
-                        'password'=>'required',
+			'name'=>'required|unique:categories,name',
 		];
 	}
 

@@ -69,7 +69,7 @@ class UsersController extends Controller {
             $users = User::find($id);
             return view('admin.users.edit')->with('users',$users);
             
-            dd($user);
+           
 	}
 
 	/**
