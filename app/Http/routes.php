@@ -21,7 +21,7 @@ Route::controllers([
 ]);
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController');
     Route::get('users/{id}/destroy',[
             'uses'=>'UsersController@destroy', 
@@ -34,5 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
             'as'=> 'admin.categories.destroy'
          ]);
 });
+
+Route::resource('registro', 'RegisterController');
 
  
