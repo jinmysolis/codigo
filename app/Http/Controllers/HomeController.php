@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
-
+use App\User;
+use Laracasts\Flash\Flash;
+use App\Http\Requests\UserRequest;
 class HomeController extends Controller {
 
 	/*
@@ -30,6 +32,9 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+               $users= User::orderBy('id','ASC')->paginate(2);
+                return view('admin.users.index')->with('users',$users);
+            
 		return view('home');
 	}
 
