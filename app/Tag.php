@@ -1,5 +1,5 @@
 <?php namespace App;
-
+use Laracasts\Flash\Flash;
 use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model {

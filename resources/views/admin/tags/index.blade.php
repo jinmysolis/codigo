@@ -3,9 +3,9 @@
 @section('title')  Listar tags @endsection
 
 @section('content')
-<p> 
+
   <a class="btn btn-info" href="{{route('admin.tags.create')}}" role="button">Crear Nuevo Tag</a>
-</p>
+
 {!!Form::open(['route'=>'admin.tags.index','method'=>'GET','class'=>'navbar-form navbar-left pull-right role="search" '])!!}
 
         <div class="form-group">

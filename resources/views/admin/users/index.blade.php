@@ -3,9 +3,9 @@
 @section('title')  Listar usuario  @endsection
 
 @section('content')
-<p> 
+
   <a class="btn btn-info" href="{{route('admin.users.create')}}" role="button">Crear Nuevo Usuario</a>
-</p>
+
 {!!Form::open(['route'=>'admin.users.index','method'=>'GET','class'=>'navbar-form navbar-left pull-right role="search" '])!!}
 
         <div class="form-group">

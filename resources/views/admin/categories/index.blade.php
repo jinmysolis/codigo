@@ -3,9 +3,9 @@
 @section('title')  Listar categoria  @endsection
 
 @section('content')
-<p> 
-  <a class="btn btn-info" href="{{route('admin.users.create')}}" role="button">Crear Nueva categoria</a>
-</p>
+ 
+  <a class="btn btn-info" href="{{route('admin.categories.create')}}" role="button">Crear Nueva categoria</a>
+
 
 {!!Form::open(['route'=>'admin.categories.index','method'=>'GET','class'=>'navbar-form navbar-left pull-right role="search" '])!!}
 

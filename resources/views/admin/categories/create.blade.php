@@ -17,4 +17,4 @@
  </p>
 
 {!!Form::close()!!}</center>
-@endsection-->
+@endsection
