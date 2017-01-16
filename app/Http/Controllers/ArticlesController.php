@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Tag;
 use App\Article;
+use App\Image;
+use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller {
@@ -14,9 +16,10 @@ class ArticlesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		//
+		$articles= Article::orderBy('id','DESC')->paginate(2);
+                 return view('admin.articles.index')->with('articles',$articles);
 	}
 
 	/**
@@ -40,11 +43,26 @@ class ArticlesController extends Controller {
 	 * @return Response
 	 */
 	public function store(Request $request)
-	{
+        {  
+            if ($request->file('image')){
 		$file=$request->file('image');
                 $name='agenda_'. time(). '.'.$file->getClientOriginalExtension();
                 $path= public_path(). '/images/articles/';
                 $file->move($path,$name);
+                }
+                
+            $article= new Article($request->all());
+            $article->user_id = \Auth::user()->id ;
+            $article->save() ;
+            
+             $article->tags()->sync($request->tags) ;
+            
+            $image= new Image();
+            $image->name =$name;
+            $image->article()->associate($article);
+            $image->save();
+             flash::success("Articulo creado correctamente");
+             return redirect()->route('admin.articles.index');
 	}
 
 	/**

@@ -7,7 +7,7 @@
 </div>
   <div class="form-group">
   {!!Form::label('tags', 'Tags')!!}
-  {!!Form::select('tags', $tags,null,['class'=>'form-control','placeholder'=>'Selecione una categoria'] )!!}
+  {!!Form::select('tags[]', $tags,null,['class'=>'form-control chosen-select','multiple','placeholder'=>'Selecione una categoria'] )!!}
 </div>  
     
  <div class="form-group">
@@ -29,6 +29,19 @@
   {!!Form::label('content', 'Contenido')!!}
   {!!Form::textarea('content',null,['class'=>'form-control'])!!}
 </div>
-    
-
+   
 </div>
+@section('js')
+
+<script>
+    $(".chosen-select").chosen({
+         placeholder_text_multiple:'Seleccione un maximode 3 tags',
+         max_selected_options:3,
+         search_contains:true,
+        
+    });
+    
+    
+    
+</script>
+@endsection
