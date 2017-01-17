@@ -8,6 +8,7 @@ use App\Article;
 use App\Image;
 use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
+use App\Http\Requests\ArticleRequest;
 
 class ArticlesController extends Controller {
 
@@ -18,7 +19,12 @@ class ArticlesController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-		$articles= Article::orderBy('id','DESC')->paginate(2);
+		$articles= Article::title($request->get('title'))->orderBy('id','DESC')->paginate(2);
+                $articles->each(function($articles){
+                    $articles->category;
+                    $articles->user;
+                });
+              
                  return view('admin.articles.index')->with('articles',$articles);
 	}
 
@@ -42,7 +48,7 @@ class ArticlesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(ArticleRequest $request)
         {  
             if ($request->file('image')){
 		$file=$request->file('image');

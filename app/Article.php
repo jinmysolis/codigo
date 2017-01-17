@@ -28,4 +28,13 @@ class Article extends Model {
             
         }
 
+         public function scopeTitle($query,$title)
+         {
+         if($title != ""){
+         $query->where('title',"LIKE","%$title%");
+          }
+	}
+
+        
+        
 }

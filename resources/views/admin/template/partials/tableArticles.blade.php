@@ -2,8 +2,11 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>TTULO</th>
+        <th>TITULO</th>
         <th>CONTENIDO</th>
+        <th>CATEGORIAS</th>
+        <th>USUARIO</th>
+        <th>ACCION</th>
       </tr>
     </thead>
     <tbody>
@@ -12,8 +15,12 @@
         <td >{{ $article->id}}</td>
         <td>{{ $article->title}}</td>
         <td>{{ $article->content}}</td>
+        <td>{{ $article->category->name}}</td>
+        <td>{{ $article->user->name}}</td>
        
-       
+        <td > <a href="{{route('admin.articles.edit',$article->id)}}" class="btn btn-danger glyphicon glyphicon-refresh"></a> 
+             <a href="{{route('admin.articles.destroy',$article->id)}}" onclick="return confirm('Seguro desea eliminar')"class="btn btn-warning glyphicon glyphicon-trash"></a>
+         </td>
 
       </tr>
       
