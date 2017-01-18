@@ -7,6 +7,7 @@
         <th>CATEGORIAS</th>
         <th>USUARIO</th>
         <th>ACCION</th>
+        <th>tas</th>
       </tr>
     </thead>
     <tbody>
