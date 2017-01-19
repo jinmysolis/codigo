@@ -18,7 +18,7 @@ class ArticlesController extends Controller {
 	 * @return Response
 	 */
 	public function index(Request $request)
-	{
+	{      $images= Image::all();
 		$articles= Article::title($request->get('title'))->orderBy('id','DESC')->paginate(2);
                 $articles->each(function($articles){
                     $articles->category;
@@ -28,7 +28,10 @@ class ArticlesController extends Controller {
                   
                 });
               
-                 return view('admin.articles.index')->with('articles',$articles);
+                 return view('admin.articles.index')
+                         ->with('articles',$articles)
+                        
+                         ;
 	}
 
 	/**

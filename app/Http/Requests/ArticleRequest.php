@@ -25,7 +25,7 @@ class ArticleRequest extends Request {
 			'title'=> 'required|min:4|max:255|unique:articles',
                         'category_id'=>'required',
                         'content'=>'required',
-                        'image'=>'required'
+                        'image'=>' image|required'
 		];
 	}
 
