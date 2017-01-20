@@ -35,7 +35,7 @@ class HomeController extends Controller {
                $users= User::orderBy('id','ASC')->paginate(2);
                 return view('admin.users.index')->with('users',$users);
             
-		return view('home');
+		
 	}
 
 }

@@ -1,4 +1,4 @@
-@extends('admin.template.main')
+@extends('admin.template.tema')
 
 @section('title')
     pagina inicio
@@ -6,23 +6,45 @@
 
 @section('content')
 <div class="container">
+    <h3 class="title-front Left">Ultimos Articulos </h3>
     <div class="row">
-   <h1>hola bb</h1>
-<a href="" class="btn btn-success">voy a casa</a>
-
-
-  {!!Form::open()!!}
-                                  
-   <div class="form-group">
-  {!!Form::label('email', 'Correo Electronico')!!}
-  {!!Form::text('email', null,['class'=>'form-control',' placeholder'=>'Por favor introduzca su Email'])!!}
+        
+      @foreach($articles as $article)   
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    
+                    @foreach($article->images as $image)   
+                    <a href="#" class="thumbnail">
+                       <img src="{{ asset( 'images/articles/' .  $image->name)}}"  class="img-responsive" style ="height:90px ;"  >       
+                        
+                      @endforeach        
+                    </a> 
+                    
+                  
+                    <h3 class="text-center">{{ $article->title}}</h3>
+                    <hr>
+                    <i class="fa fa-folder-open-o"></i><a href="">categoria:{{ $article->category->name}}</a>
+                    <div class="pull-right">
+                        <i class="fa fa-clock-o"></i>hace 3 minutos
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+          
+          
+          
+            @endforeach
+          
+          
     </div>
- <button type="submit" class="btn btn-info">Crear Usuario</button>
-                                   
- {!!Form::close()!!}
+
+  
  
  </div>
- </div>
+ 
 @endsection
 
 

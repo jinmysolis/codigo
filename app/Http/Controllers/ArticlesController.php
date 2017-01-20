@@ -19,7 +19,7 @@ class ArticlesController extends Controller {
 	 */
 	public function index(Request $request)
 	{      $images= Image::all();
-		$articles= Article::title($request->get('title'))->orderBy('id','DESC')->paginate(2);
+		$articles= Article::title($request->get('title'))->orderBy('id','DESC')->paginate(5);
                 $articles->each(function($articles){
                     $articles->category;
                     $articles->user;

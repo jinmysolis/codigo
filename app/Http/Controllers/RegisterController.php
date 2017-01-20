@@ -17,7 +17,7 @@ class RegisterController extends Controller {
 	 */
 	public function index()
 	{
-		$users= User::orderBy('id','ASC')->paginate(2);
+		$users= User::orderBy('id','ASC')->paginate(5);
                 return view('registro.index')->with('users',$users);
 	}
 

@@ -1,5 +1,12 @@
 <?php namespace App\Http\Controllers;
+use App\Category;
+use App\Tag;
+use App\Article;
+use App\Image;
 
+use App\User;
+use Illuminate\Http\Request;
+use App\Http\Requests\ArticleRequest;
 class WelcomeController extends Controller {
 
 	/*
@@ -28,9 +35,15 @@ class WelcomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		return view('welcome');
+               $articles= Article::orderBy('id','ASC')->paginate(3);
+               $articles->each(function($articles){
+                    $articles->category;
+                    $articles->images;
+                  
+                });
+                return view('welcome')->with('articles',$articles);
 	}
 
 }
