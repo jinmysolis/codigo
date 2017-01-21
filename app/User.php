@@ -41,4 +41,10 @@ public function scopeName($query,$name)
          $query->where('name',"LIKE","%$name%");
           }
 	}
+        
+   public function admin()
+         {
+         return $this->type === 'admin';
+	}     
+        
 }

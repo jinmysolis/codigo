@@ -137,6 +137,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
                 'Collective\Html\HtmlServiceProvider',
                  'Laracasts\Flash\FlashServiceProvider',
+              
                 
 
 		/*
@@ -147,6 +148,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+                'App\Providers\ComposerServiceProvider',
 
 	],
 

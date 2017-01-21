@@ -1,4 +1,4 @@
-@extends('admin.template.main')
+@extends('admin.template.tema')
 
 @section('title')  crear tags @endsection
 

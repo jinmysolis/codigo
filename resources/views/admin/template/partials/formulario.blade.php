@@ -20,6 +20,6 @@
 
 <div class="form-group">
   {!!Form::label('type', 'Rol')!!}
-  {!!Form::select('type',[''=>'Selecione un nivel','member'=>'Miembro','admin'=>'Administrador'],null,['class'=>'form-control'])!!}
+  {!!Form::select('type',[''=>'Selecione un nivel','member'=>'Miembro','admin'=>'Admin'],null,['class'=>'form-control'])!!}
 </div>
 </div>

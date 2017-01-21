@@ -3,8 +3,9 @@ use App\Category;
 use App\Tag;
 use App\Article;
 use App\Image;
-
+use Carbon\Carbon;
 use App\User;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
 class WelcomeController extends Controller {
@@ -28,8 +29,11 @@ class WelcomeController extends Controller {
 	public function __construct()
 	{
 		$this->middleware('guest');
+//              Carbon::setLocale('es');
+                
 	}
 
+       
 	/**
 	 * Show the application welcome screen to the user.
 	 *
@@ -37,7 +41,7 @@ class WelcomeController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-               $articles= Article::orderBy('id','ASC')->paginate(3);
+               $articles= Article::orderBy('id','ASC')->paginate(4);
                $articles->each(function($articles){
                     $articles->category;
                     $articles->images;
@@ -45,5 +49,19 @@ class WelcomeController extends Controller {
                 });
                 return view('welcome')->with('articles',$articles);
 	}
-
+        
+        public function searchCategory($name)
+         {
+            $category= Category::Name($name)->first();
+            $articles=$category->articles()->paginate(4);
+            $articles->each(function($articles){
+                    $articles->category;
+                    $articles->images;
+                  
+                });
+            
+         return view('welcome')->with('articles',$articles);
+	}
+        
+        
 }

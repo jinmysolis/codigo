@@ -13,6 +13,21 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('categories/{name}/',[
+            'uses'=>'WelcomeController@searchCategory', 
+            'as'=> 'front.search.category'
+         ]);
+
+Route::get('articles/{slug}/',[
+            'uses'=>'WelcomeController@viewArticle', 
+            'as'=> 'front.view.article'
+         ]);
+
+Route::get('tags/{name}/',[
+            'uses'=>'WelcomeController@searchTags', 
+            'as'=> 'front.search.tag'
+         ]);
+
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
