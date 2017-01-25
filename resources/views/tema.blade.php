@@ -1,4 +1,4 @@
-@extends('admin.template.tema')
+@extends('admin.template.main')
 
 @section('title')  Listar usuario  @endsection
 

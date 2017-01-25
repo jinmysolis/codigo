@@ -16,6 +16,10 @@
 <button type="submit" class="btn btn-info">Buscar</button>
                                         
 {!!Form::close()!!}
+<div class="text-center">
 @include('admin.template.partials.table')
+</div>
+<div class="text-center">
 {!! $users->setPath('')->render()!!}
+</div>
 @endsection

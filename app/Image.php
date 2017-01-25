@@ -11,5 +11,12 @@ class Image extends Model {
             return $this->belongsTo('App\Article');
             
         }
+        
+        public function scopeName($query,$name)
+         {
+         if($name != ""){
+         $query->where('name',"LIKE","%$name%");
+          }
+	}
 
 }

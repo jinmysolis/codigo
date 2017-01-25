@@ -39,15 +39,22 @@ class WelcomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(Request $request)
-	{
-               $articles= Article::orderBy('id','ASC')->paginate(4);
+	public function index(Request $request)      
+	{      
+               $tags= Tag::all();
+               $users= User::all();
+               $articles= Article::orderBy('id','DESC')->paginate(6);
                $articles->each(function($articles){
                     $articles->category;
                     $articles->images;
+                    $articles->user;
                   
                 });
-                return view('welcome')->with('articles',$articles);
+                return view('welcome')
+                        ->with('articles',$articles)
+                        ->with('users',$users)
+                        ->with('tags',$tags)
+                        ;
 	}
         
         public function searchCategory($name)

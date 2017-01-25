@@ -9,7 +9,7 @@
        <link rel="stylesheet" href="{{asset('dist/ui/trumbowyg.css')}}">
 </head>
 <body>
-    @include('admin.template.partials.nav')
+    @include('admin.template.partials.nav2')
   
     <div class="container">
     <div class="row">

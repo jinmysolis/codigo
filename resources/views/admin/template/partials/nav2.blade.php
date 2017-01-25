@@ -1,25 +1,6 @@
 <div class="top-info-bar bg-color-7 hidden-xs">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-7">
-              <ul class="list-inline topList">
-                <li><i class="fa fa-envelope bg-color-1" aria-hidden="true"></i> <a href="mailto:solisjinmy@gmail.com">solisjinmy@gmail.com</a></li>
-                <li><i class="fa fa-phone bg-color-2" aria-hidden="true"></i> 04165812002</li>
-                
-              </ul>
-            </div>
-            <div class="col-sm-5">
-              <ul class="list-inline functionList">
-              
-                
-                <li><i class="fa fa-unlock-alt bg-color-5" aria-hidden="true"></i> <a href='{{ url('/auth/login') }}' data-toggle="modal" >Entrar</a><span>o</span><a href='{{ url('/registro/create') }}' data-toggle="modal">Registarse</a></li>
-                <li><i class="fa fa-unlock-alt bg-color-5" aria-hidden="true"></i> <a href='{{ url('/auth/logout') }}' data-toggle="modal" >Salir</a>
-                
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+        
+     
 
       <!-- NAVBAR -->
       <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
@@ -32,7 +13,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            
+          
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -98,35 +79,30 @@
                 </ul>
               </li>
               
-              <li class="dropdown singleDrop color-4">
+              
+                 <li class="dropdown singleDrop color-4">
                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true"></i> 
-                  <span>Tag</span>
+                  <span>Imagenes</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right">
                   
-                 <li><a href="{{route('admin.tags.index')}}">Listar</a></li>
-                 <li><a href="{{route('admin.tags.create')}}">Crear</a></li>
-                  
+                 <li><i class="fa fa-unlock-alt bg-color-5" aria-hidden="true"></i>  <li><a href="{{route('admin.images.index')}}">Listar</a></li>
+                    
                   
                 </ul>
               </li>
               
-              <li class="dropdown singleDrop color-5">
+              
+              
+              <li class="dropdown singleDrop color-4">
                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-calendar bg-color-5" aria-hidden="true"></i> 
-                  <span>Imagenes</span>
+                  <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true"></i> 
+                  <span>Salir</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                  <li class="dropdown dropdown-submenu">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Imagenes<i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="{{route('admin.images.index')}}">Listar</a></li>
-                     
-                    </ul>
-                  </li>
-                  
+                
+                <li><i class="fa fa-unlock-alt bg-color-5" aria-hidden="true"></i> <a href='{{ url('/auth/logout') }}' data-toggle="modal" >Salir</a>
                   
                 </ul>
               </li>

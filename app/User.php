@@ -42,9 +42,6 @@ public function scopeName($query,$name)
           }
 	}
         
-   public function admin()
-         {
-         return $this->type === 'admin';
-	}     
+      
         
 }

@@ -32,7 +32,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-               $users= User::orderBy('id','ASC')->paginate(2);
+               $users= User::orderBy('id','DESC')->paginate(10);
                 return view('admin.users.index')->with('users',$users);
             
 		

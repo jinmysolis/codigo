@@ -1,5 +1,4 @@
 @extends('admin.template.tema')
-
 @section('title')  editar Tags  @endsection
 
 @section('content')
